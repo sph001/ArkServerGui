@@ -54,13 +54,18 @@
             this.DifficultyTextBox = new System.Windows.Forms.TextBox();
             this.MaxPlayersLabel = new System.Windows.Forms.Label();
             this.MaxPlayersTextBox = new System.Windows.Forms.TextBox();
+            this.MaxStructuresInRangeLabel = new System.Windows.Forms.Label();
+            this.MaxStructuresInRangeTextBox = new System.Windows.Forms.TextBox();
+            this.DisableStructureDecayPveCheckBox = new System.Windows.Forms.CheckBox();
+            this.AllowFlyerCarryPveCheckBox = new System.Windows.Forms.CheckBox();
+            this.EnablePvPGamaCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // MessageOfTheDayRichTextBox
             // 
             this.MessageOfTheDayRichTextBox.Location = new System.Drawing.Point(427, 27);
             this.MessageOfTheDayRichTextBox.Name = "MessageOfTheDayRichTextBox";
-            this.MessageOfTheDayRichTextBox.Size = new System.Drawing.Size(222, 199);
+            this.MessageOfTheDayRichTextBox.Size = new System.Drawing.Size(289, 250);
             this.MessageOfTheDayRichTextBox.TabIndex = 0;
             this.MessageOfTheDayRichTextBox.Text = "";
             this.MessageOfTheDayRichTextBox.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -76,7 +81,7 @@
             // 
             // UpdateServerBtn
             // 
-            this.UpdateServerBtn.Location = new System.Drawing.Point(427, 238);
+            this.UpdateServerBtn.Location = new System.Drawing.Point(510, 281);
             this.UpdateServerBtn.Name = "UpdateServerBtn";
             this.UpdateServerBtn.Size = new System.Drawing.Size(91, 23);
             this.UpdateServerBtn.TabIndex = 2;
@@ -86,7 +91,7 @@
             // 
             // StartServerButton
             // 
-            this.StartServerButton.Location = new System.Drawing.Point(571, 238);
+            this.StartServerButton.Location = new System.Drawing.Point(641, 283);
             this.StartServerButton.Name = "StartServerButton";
             this.StartServerButton.Size = new System.Drawing.Size(75, 23);
             this.StartServerButton.TabIndex = 3;
@@ -313,11 +318,69 @@
             this.MaxPlayersTextBox.TextChanged += new System.EventHandler(this.MaxPlayersTextBox_TextChanged);
             this.MaxPlayersTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MaxPlayersTextBox_KeyPress);
             // 
-            // Form1
+            // MaxStructuresInRangeLabel
+            // 
+            this.MaxStructuresInRangeLabel.AutoSize = true;
+            this.MaxStructuresInRangeLabel.Location = new System.Drawing.Point(225, 247);
+            this.MaxStructuresInRangeLabel.Name = "MaxStructuresInRangeLabel";
+            this.MaxStructuresInRangeLabel.Size = new System.Drawing.Size(125, 13);
+            this.MaxStructuresInRangeLabel.TabIndex = 26;
+            this.MaxStructuresInRangeLabel.Text = "Max Structures In Range";
+            // 
+            // MaxStructuresInRangeTextBox
+            // 
+            this.MaxStructuresInRangeTextBox.Location = new System.Drawing.Point(223, 264);
+            this.MaxStructuresInRangeTextBox.Name = "MaxStructuresInRangeTextBox";
+            this.MaxStructuresInRangeTextBox.Size = new System.Drawing.Size(174, 20);
+            this.MaxStructuresInRangeTextBox.TabIndex = 27;
+            this.MaxStructuresInRangeTextBox.Text = "1300";
+            this.MaxStructuresInRangeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.MaxStructuresInRangeTextBox.TextChanged += new System.EventHandler(this.MaxStructuresInRangeTextBox_TextChanged);
+            this.MaxStructuresInRangeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MaxStructuresInRangeTextBox_KeyPress);
+            // 
+            // DisableStructureDecayPveCheckBox
+            // 
+            this.DisableStructureDecayPveCheckBox.AutoSize = true;
+            this.DisableStructureDecayPveCheckBox.Location = new System.Drawing.Point(12, 242);
+            this.DisableStructureDecayPveCheckBox.Name = "DisableStructureDecayPveCheckBox";
+            this.DisableStructureDecayPveCheckBox.Size = new System.Drawing.Size(159, 17);
+            this.DisableStructureDecayPveCheckBox.TabIndex = 28;
+            this.DisableStructureDecayPveCheckBox.Text = "Disable structure decay Pve";
+            this.DisableStructureDecayPveCheckBox.UseVisualStyleBackColor = true;
+            this.DisableStructureDecayPveCheckBox.CheckedChanged += new System.EventHandler(this.DisableStructureDecayPveCheckBox_CheckedChanged);
+            // 
+            // AllowFlyerCarryPveCheckBox
+            // 
+            this.AllowFlyerCarryPveCheckBox.AutoSize = true;
+            this.AllowFlyerCarryPveCheckBox.Location = new System.Drawing.Point(13, 264);
+            this.AllowFlyerCarryPveCheckBox.Name = "AllowFlyerCarryPveCheckBox";
+            this.AllowFlyerCarryPveCheckBox.Size = new System.Drawing.Size(125, 17);
+            this.AllowFlyerCarryPveCheckBox.TabIndex = 29;
+            this.AllowFlyerCarryPveCheckBox.Text = "Allow Flyer Carry Pve";
+            this.AllowFlyerCarryPveCheckBox.UseVisualStyleBackColor = true;
+            this.AllowFlyerCarryPveCheckBox.CheckedChanged += new System.EventHandler(this.AllowFlyerCarryPveCheckBox_CheckedChanged);
+            // 
+            // EnablePvPGamaCheckBox
+            // 
+            this.EnablePvPGamaCheckBox.AutoSize = true;
+            this.EnablePvPGamaCheckBox.Location = new System.Drawing.Point(13, 287);
+            this.EnablePvPGamaCheckBox.Name = "EnablePvPGamaCheckBox";
+            this.EnablePvPGamaCheckBox.Size = new System.Drawing.Size(114, 17);
+            this.EnablePvPGamaCheckBox.TabIndex = 30;
+            this.EnablePvPGamaCheckBox.Text = "Enable Gama PVP";
+            this.EnablePvPGamaCheckBox.UseVisualStyleBackColor = true;
+            this.EnablePvPGamaCheckBox.CheckedChanged += new System.EventHandler(this.EnablePvPGamaCheckBox_CheckedChanged);
+            // 
+            // ArkServerGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 273);
+            this.ClientSize = new System.Drawing.Size(728, 316);
+            this.Controls.Add(this.EnablePvPGamaCheckBox);
+            this.Controls.Add(this.AllowFlyerCarryPveCheckBox);
+            this.Controls.Add(this.DisableStructureDecayPveCheckBox);
+            this.Controls.Add(this.MaxStructuresInRangeTextBox);
+            this.Controls.Add(this.MaxStructuresInRangeLabel);
             this.Controls.Add(this.MaxPlayersTextBox);
             this.Controls.Add(this.MaxPlayersLabel);
             this.Controls.Add(this.DifficultyTextBox);
@@ -345,7 +408,7 @@
             this.Controls.Add(this.MessageOfTheDayLable);
             this.Controls.Add(this.MessageOfTheDayRichTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form1";
+            this.Name = "ArkServerGUI";
             this.Text = "Ark Server Manager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -382,6 +445,11 @@
         private System.Windows.Forms.TextBox DifficultyTextBox;
         private System.Windows.Forms.Label MaxPlayersLabel;
         private System.Windows.Forms.TextBox MaxPlayersTextBox;
+        private System.Windows.Forms.Label MaxStructuresInRangeLabel;
+        private System.Windows.Forms.TextBox MaxStructuresInRangeTextBox;
+        private System.Windows.Forms.CheckBox DisableStructureDecayPveCheckBox;
+        private System.Windows.Forms.CheckBox AllowFlyerCarryPveCheckBox;
+        private System.Windows.Forms.CheckBox EnablePvPGamaCheckBox;
     }
 }
 

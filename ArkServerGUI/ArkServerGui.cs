@@ -209,5 +209,33 @@ namespace ArkServerGUI
                 e.Handled = true;
             }
         }
+
+        private void DisableStructureDecayPveCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            this._arkServer.Settings.bDisableStructureDecayPve = this.DisableStructureDecayPveCheckBox.Checked;
+        }
+
+        private void AllowFlyerCarryPveCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            this._arkServer.Settings.bAllowFlyerCarryPve = this.AllowFlyerCarryPveCheckBox.Checked;
+        }
+
+        private void EnablePvPGamaCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            this._arkServer.Settings.EnablePvpGama = this.EnablePvPGamaCheckBox.Checked;
+        }
+
+        private void MaxStructuresInRangeTextBox_TextChanged(object sender, EventArgs e)
+        {
+            this._arkServer.Settings.MaxStructuresInRange = Convert.ToInt32(this.MaxStructuresInRangeTextBox.Text);
+        }
+
+        private void MaxStructuresInRangeTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
