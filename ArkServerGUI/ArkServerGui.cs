@@ -11,7 +11,7 @@ namespace ArkServerGUI
     {
         readonly Server _arkServer = new Server();
 
-        int ServerButtonClickCount = 0;
+        int _serverButtonClickCount = 0;
         public ArkServerGUI()
         {
             InitializeComponent();
@@ -58,28 +58,27 @@ namespace ArkServerGUI
         private async void UpdateServerBtn_Click(object sender, EventArgs e)
         {
             this.UpdateServerBtn.Enabled = false;
-            this._arkServer.SteamCmd.StartUpdate();
-            while (!this._arkServer.SteamCmd.SteamProcess.HasExited)
+            this._arkServer.Update();
+            while (!this._arkServer.SteamProcess.HasExited)
             {
-
                 await Task.Run(() => Thread.Sleep(100));
             }
             this.UpdateServerBtn.Enabled = true;
         }
 
-        private async void StartServerButton_Click(object sender, EventArgs e)
+        private void StartServerButton_Click(object sender, EventArgs e)
         {
-            if (this.ServerButtonClickCount % 2 == 0)
+            if (this._serverButtonClickCount % 2 == 0)
             {
                 this.StartServerButton.Text = "Stop Server";
-                await Task.Run(() => this._arkServer.StartServer());
+                this._arkServer.Start();
             }
             else
             {
                 this.StartServerButton.Text = "Start Server";
-                await Task.Run(() => this._arkServer.CloseSever());
+                this._arkServer.Close();
             }
-            this.ServerButtonClickCount = this.ServerButtonClickCount + 1;
+            this._serverButtonClickCount = this._serverButtonClickCount + 1;
         }
 
         private void PveServerCheckBox_CheckedChanged(object sender, EventArgs e)
